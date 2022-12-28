@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'flutter_upgrader'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'A Flutter App Upgrader plugin.'
   s.description      = <<-DESC
 A Flutter App Upgrader plugin, Support ios and android upgrade from the app store.
