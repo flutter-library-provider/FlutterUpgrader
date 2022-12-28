@@ -37,7 +37,7 @@ class FlutterUpgradeChanneler {
     var map = {'packages': packageNameList};
     var result = await _channel.invokeMethod('getInstallMarket', map);
 
-    return result as List<String>;
+    return ((result as List).map((str) => '$str').toList());
   }
 
   // 跳转到 ios app store
