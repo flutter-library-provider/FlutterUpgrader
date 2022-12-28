@@ -6,6 +6,10 @@
 
 - fix(android): fix jumpMarket api: addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
 
-## 1.0.2
+## 1.0.3
 
 - docs: Add README.md and example
+
+## 1.0.3
+
+- docs: Update README.md

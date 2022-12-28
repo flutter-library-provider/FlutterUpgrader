@@ -1,28 +1,20 @@
 > 一个 Flutter 应用升级插件, 支持 Android 和 IOS  
 > 插件的构思和设计来均自于 [flutter_app_upgrade](https://github.com/LaoMengFlutter/flutter-do/tree/master/flutter_app_upgrade)
 
-<br/>
-<br/>
-
 # 安装
 
 1. 在 `pubspec.yaml` 添加
 
    ```
     dependencies:
-      flutter_upgrader: ^1.0.2
+      flutter_upgrader: ^1.0.3
    ```
-
-  <br/>
 
 2. 在命令行运行如下
 
    ```
     flutter pub get
    ```
-
-  <br/>
-  <br/>
 
 # 使用
 
@@ -150,8 +142,6 @@
       src="https://linpengteng.github.io/resource/flutter-upgrader/android_upgrader.gif"
     >
   </p>
-
-  <br/>
 
 ## IOS
 
