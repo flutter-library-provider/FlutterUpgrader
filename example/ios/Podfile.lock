@@ -1,6 +1,6 @@
 PODS:
-  - Flutter (1.0.5)
-  - flutter_upgrader (1.0.5):
+  - Flutter (1.0.6)
+  - flutter_upgrader (1.0.6):
     - Flutter
 
 DEPENDENCIES:

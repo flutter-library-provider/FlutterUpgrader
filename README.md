@@ -6,7 +6,7 @@
 
    ```
     dependencies:
-      flutter_upgrader: ^1.0.5
+      flutter_upgrader: ^1.0.6
    ```
 
 2. 在命令行运行如下
@@ -106,9 +106,9 @@
     );
    ```
 
-  <p style="margin-left: 35px;">
+  <p>
     <img 
-      style="width: 80%; max-width: 380px; margin: 0 auto;" 
+      style="width: 350px; margin-left: 35px;" 
       src="https://linpengteng.github.io/resource/flutter-upgrader/android_upgrader.png"
     >
   </p>
@@ -135,9 +135,9 @@
     );
    ```
 
-  <p style="margin-left: 35px;">
+  <p>
     <img 
-      style="width: 80%; max-width: 380px; margin: 0 auto;" 
+      style="width: 350px; margin-left: 35px;" 
       src="https://linpengteng.github.io/resource/flutter-upgrader/android_upgrader.gif"
     >
   </p>
@@ -166,9 +166,9 @@
     );
    ```
 
-  <p style="margin-left: 35px;">
+  <p>
     <img 
-      style="width: 80%; max-width: 380px; margin: 0 auto;" 
+      style="width: 350px; margin-left: 35px;" 
       src="https://linpengteng.github.io/resource/flutter-upgrader/ios_upgrader.png"
     >
   </p>
