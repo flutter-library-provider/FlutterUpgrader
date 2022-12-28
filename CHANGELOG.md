@@ -13,3 +13,7 @@
 ## 1.0.4
 
 - docs: Update README.md
+
+## 1.0.5
+
+- docs: Add LICENSE
