@@ -1,7 +1,11 @@
 ## 1.0.0
 
-- TODO: begin A Flutter app Upgrader plugin, Support ios and android upgrade from the app store.
+- begin: 一个 Flutter 应用升级插件, 支持 Android 和 IOS
 
 ## 1.0.1
 
 - fix(android): fix jumpMarket api: addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+
+## 1.0.2
+
+- docs: Add README.md and example

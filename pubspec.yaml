@@ -1,7 +1,7 @@
 name: flutter_upgrader
 description: A Flutter App Upgrader plugin.
-version: 1.0.1
-homepage:
+homepage: https://github.com/linpengteng/flutter_upgrader
+version: 1.0.2
 
 environment:
   sdk: '>=2.18.6 <3.0.0'
