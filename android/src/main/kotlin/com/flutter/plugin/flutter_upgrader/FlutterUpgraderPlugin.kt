@@ -91,6 +91,7 @@ class FlutterUpgraderPlugin: FlutterPlugin, MethodCallHandler {
       if (nameEmpty || classEmpty) {
         goToMarket.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
       } else {
+        goToMarket.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         goToMarket.setClassName(marketPackageName!!, marketClassName!!)
       }
       context.startActivity(goToMarket)
