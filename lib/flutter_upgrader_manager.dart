@@ -32,10 +32,7 @@ class AppUpgradeManager {
               Theme.of(context).primaryColor
             ];
 
-            return WillPopScope(
-              onWillPop: () async {
-                return false;
-              },
+            return PopScope(
               child: Dialog(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(

@@ -9,21 +9,16 @@ class LiquidProgressIndicator extends ProgressIndicator {
   final Widget? center;
 
   const LiquidProgressIndicator({
-    Key? key,
-    double value = 0.5,
-    Color? backgroundColor,
-    Animation<Color>? valueColor,
+    super.key,
+    double super.value = 0.5,
+    super.backgroundColor,
+    Animation<Color>? super.valueColor,
     this.direction = Axis.horizontal,
     this.borderWidth,
     this.borderColor,
     this.borderRadius,
     this.center,
-  }) : super(
-          key: key,
-          value: value,
-          valueColor: valueColor,
-          backgroundColor: backgroundColor,
-        );
+  });
 
   Color getBackgroundColor(BuildContext context) {
     return backgroundColor ?? const Color(0x0000BFFF);

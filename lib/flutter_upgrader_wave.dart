@@ -7,11 +7,11 @@ class Wave extends StatefulWidget {
   final Axis direction;
 
   const Wave({
-    Key? key,
+    super.key,
     required this.value,
     required this.color,
     required this.direction,
-  }) : super(key: key);
+  });
 
   @override
   WaveState createState() => WaveState();

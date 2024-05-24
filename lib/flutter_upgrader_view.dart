@@ -9,7 +9,7 @@ class SimpleUpgradeViewWidget extends StatefulWidget {
   const SimpleUpgradeViewWidget({
     required this.title,
     required this.contents,
-    Key? key,
+    super.key,
     this.titleStyle,
     this.contentStyle,
     this.cancelText,
@@ -28,7 +28,7 @@ class SimpleUpgradeViewWidget extends StatefulWidget {
     this.onOk,
     this.downloadProgress,
     this.downloadStatusChange,
-  }) : super(key: key);
+  });
 
   // 升级标题
   final String title;
