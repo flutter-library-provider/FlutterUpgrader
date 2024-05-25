@@ -1,0 +1,34 @@
+name: Publisher
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Check Dart/Flutter publish
+        uses: k-paxian/dart-package-publisher@master
+        with:
+          flutter: true
+          skipTests: true
+          dryRunOnly: true
+          accessToken: ${{ secrets.OAUTH_ACCESS_TOKEN }}
+          refreshToken: ${{ secrets.OAUTH_REFRESH_TOKEN }}
+
+  publish:
+    runs-on: ubuntu-latest
+    needs: check
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Publish Dart/Flutter package
+        uses: k-paxian/dart-package-publisher@master
+        with:
+          flutter: true
+          skipTests: true
+          accessToken: ${{ secrets.OAUTH_ACCESS_TOKEN }}
+          refreshToken: ${{ secrets.OAUTH_REFRESH_TOKEN }}
