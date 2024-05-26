@@ -15,8 +15,7 @@ jobs:
           flutter: true
           skipTests: true
           dryRunOnly: true
-          accessToken: ${{ secrets.OAUTH_ACCESS_TOKEN }}
-          refreshToken: ${{ secrets.OAUTH_REFRESH_TOKEN }}
+          credentialJson: ${{ secrets.PUB_CREDENTIAL_JSON }}
 
   publish:
     runs-on: ubuntu-latest
@@ -30,5 +29,4 @@ jobs:
         with:
           flutter: true
           skipTests: true
-          accessToken: ${{ secrets.OAUTH_ACCESS_TOKEN }}
-          refreshToken: ${{ secrets.OAUTH_REFRESH_TOKEN }}
+          credentialJson: ${{ secrets.PUB_CREDENTIAL_JSON }}

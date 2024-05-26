@@ -18,7 +18,7 @@
 
 - docs: Add LICENSE
 
-## 1.0.8
+## 1.1.0
 
 - chore: Upgrade Flutter SDK and denpendencies (Dio)
 - fix(ios): fix syntax error (withRegistry -> with)
