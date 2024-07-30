@@ -1,24 +1,28 @@
-## 1.0.0
+## 1.1.2
 
-- begin: 一个 Flutter 应用升级插件, 支持 Android 和 IOS
+- chore: Upgrade some dependencies
 
-## 1.0.1
+## 1.1.0
 
-- fix(android): fix jumpMarket api: addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-
-## 1.0.2
-
-- docs: Add README.md and example
-
-## 1.0.4
-
-- docs: Update README.md
+- chore: Upgrade Flutter SDK and dependencies (Dio)
+- fix(ios): fix syntax error (withRegistry -> with)
 
 ## 1.0.7
 
 - docs: Add LICENSE
 
-## 1.1.0
+## 1.0.4
 
-- chore: Upgrade Flutter SDK and denpendencies (Dio)
-- fix(ios): fix syntax error (withRegistry -> with)
+- docs: Update README.md
+
+## 1.0.2
+
+- docs: Add README.md and example
+
+## 1.0.1
+
+- fix(android): fix jumpMarket api: addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+
+## 1.0.0
+
+- begin: 一个 Flutter 应用升级插件, 支持 Android 和 IOS

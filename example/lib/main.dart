@@ -55,7 +55,7 @@ class _MyAppState extends State<MyApp> {
                     AppUpgradeManager.upgrade(
                       context,
                       appUpgradeInfo,
-                      iosAppId: '1634151105',
+                      iosAppId: '',
                     );
                   }
                 },
