@@ -1,6 +1,7 @@
-## 1.1.2
+## 1.1.3
 
 - chore: Upgrade some dependencies
+- chore: Update README.md
 
 ## 1.1.0
 
