@@ -1,3 +1,8 @@
+## 1.1.4
+
+- chore: Support DividerTheme
+- chore: Test example/lib/main.dart
+
 ## 1.1.3
 
 - chore: Upgrade some dependencies

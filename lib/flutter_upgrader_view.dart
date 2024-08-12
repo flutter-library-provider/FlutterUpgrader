@@ -111,7 +111,11 @@ class SimpleUpgradeViewWidgetState extends State<SimpleUpgradeViewWidget> {
   Widget _buildInfoWidget(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
-      children: <Widget>[_buildTitle(), _buildAppInfo(), _buildAction()],
+      children: <Widget>[
+        _buildTitle(context),
+        _buildAppInfo(context),
+        _buildAction(context),
+      ],
     );
   }
 
@@ -157,7 +161,7 @@ class SimpleUpgradeViewWidgetState extends State<SimpleUpgradeViewWidget> {
   }
 
   // 构建标题
-  _buildTitle() {
+  _buildTitle(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(
         top: 20,
@@ -171,7 +175,7 @@ class SimpleUpgradeViewWidgetState extends State<SimpleUpgradeViewWidget> {
   }
 
   // 构建版本更新信息
-  _buildAppInfo() {
+  _buildAppInfo(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(left: 15, right: 15, bottom: 30),
       height: 200,
@@ -187,13 +191,18 @@ class SimpleUpgradeViewWidgetState extends State<SimpleUpgradeViewWidget> {
   }
 
   // 构建取消或者升级按钮
-  _buildAction() {
+  _buildAction(BuildContext context) {
+    final dividerTheme = DividerTheme.of(context);
+
     if (widget.force == true) {
       return Column(
         children: <Widget>[
-          const Divider(
+          Divider(
             height: 1,
-            color: Colors.grey,
+            color: dividerTheme.color ?? Colors.grey,
+            thickness: dividerTheme.thickness,
+            indent: dividerTheme.indent,
+            endIndent: dividerTheme.endIndent,
           ),
           Row(
             children: <Widget>[
@@ -207,9 +216,12 @@ class SimpleUpgradeViewWidgetState extends State<SimpleUpgradeViewWidget> {
 
     return Column(
       children: <Widget>[
-        const Divider(
+        Divider(
           height: 1,
-          color: Colors.grey,
+          color: dividerTheme.color ?? Colors.grey,
+          thickness: dividerTheme.thickness,
+          indent: dividerTheme.indent,
+          endIndent: dividerTheme.endIndent,
         ),
         Row(
           children: <Widget>[

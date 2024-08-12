@@ -17,10 +17,11 @@ class AppUpgradeManager {
     double borderRadius = 20.0,
     String? iosAppId,
     AppMarketInfo? appMarketInfo,
-    VoidCallback? onCancel,
-    VoidCallback? onOk,
+    DividerThemeData? dividerTheme,
     DownloadProgressCallback? downloadProgress,
     DownloadStatusChangeCallback? downloadStatusChange,
+    VoidCallback? onCancel,
+    VoidCallback? onOk,
   }) {
     future.then((AppUpgradeInfo appUpgradeInfo) {
       showDialog(
@@ -32,7 +33,8 @@ class AppUpgradeManager {
               Theme.of(context).primaryColor
             ];
 
-            return PopScope(
+            return DividerTheme(
+              data: dividerTheme ?? DividerTheme.of(context),
               child: Dialog(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(
