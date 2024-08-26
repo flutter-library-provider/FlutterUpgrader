@@ -139,24 +139,28 @@ class SimpleUpgradeViewWidgetState extends State<SimpleUpgradeViewWidget> {
     widget.downloadStatusChange?.call(_downloadStatus, error: null);
 
     try {
-      await Dio().download(url, path,
-          onReceiveProgress: (int count, int total) {
-        if (total == -1) {
-          _downloadProgress = 0.01;
-        } else {
-          widget.downloadProgress?.call(count, total);
-          _downloadProgress = count / total.toDouble();
-        }
+      await Dio().download(
+        url,
+        path,
+        options: Options(headers: widget.headers),
+        onReceiveProgress: (int count, int total) {
+          if (total == -1) {
+            _downloadProgress = 0.01;
+          } else {
+            widget.downloadProgress?.call(count, total);
+            _downloadProgress = count / total.toDouble();
+          }
 
-        setState(() {});
+          setState(() {});
 
-        if (_downloadProgress == 1) {
-          _downloadStatus = DownloadStatus.done;
-          widget.downloadStatusChange?.call(DownloadStatus.done);
-          FlutterUpgradeChanneler.installAppForAndroid(path);
-          Navigator.pop(context);
-        }
-      },options: Options(headers: widget.headers));
+          if (_downloadProgress == 1) {
+            _downloadStatus = DownloadStatus.done;
+            widget.downloadStatusChange?.call(DownloadStatus.done);
+            FlutterUpgradeChanneler.installAppForAndroid(path);
+            Navigator.pop(context);
+          }
+        },
+      );
     } catch (e) {
       _downloadProgress = 0;
       _downloadStatus = DownloadStatus.error;

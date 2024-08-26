@@ -1,3 +1,7 @@
+## 1.1.5
+
+- chore: support headers options
+
 ## 1.1.4
 
 - chore: Support DividerTheme

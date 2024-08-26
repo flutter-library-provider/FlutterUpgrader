@@ -1,6 +1,5 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_upgrader/flutter_upgrader.dart';
 
 void main() {
@@ -22,7 +21,7 @@ class _MyAppState extends State<MyApp> {
         title: const Text('Flutter Upgrader Plugin'),
       ),
       body: DividerTheme(
-        data: const DividerThemeData(color: Colors.red), // support
+        data: const DividerThemeData(color: Colors.white), // support
         child: Container(
           margin: const EdgeInsets.only(top: 50),
           alignment: Alignment.topCenter,
@@ -64,7 +63,7 @@ class UpgradeButton extends StatelessWidget {
             context,
             appUpgradeInfo,
             appMarketInfo: AppMarketManager.huaWei,
-            // dividerTheme: const DividerThemeData(color: Colors.blue), // support
+            // dividerTheme: const DividerThemeData(color: Colors.white), // support
           );
         }
 
@@ -73,7 +72,7 @@ class UpgradeButton extends StatelessWidget {
             context,
             iosAppId: '',
             appUpgradeInfo,
-            // dividerTheme: const DividerThemeData(color: Colors.blue), // support
+            // dividerTheme: const DividerThemeData(color: Colors.white), // support
           );
         }
       },

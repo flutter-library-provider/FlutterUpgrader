@@ -90,17 +90,16 @@ class AppUpgradeInfo {
   AppUpgradeInfo({
     required this.title,
     required this.contents,
+    this.headers,
     this.apkDownloadUrl,
     this.force = false,
-    this.headers
   });
 
   final String title;
   final List<String> contents;
+  final Map<String, dynamic>? headers;
   final String? apkDownloadUrl;
   final bool force;
-  ///[headers] 指定URL下载时可传
-  final Map<String, dynamic>? headers;
 }
 
 // 下载进度回调
