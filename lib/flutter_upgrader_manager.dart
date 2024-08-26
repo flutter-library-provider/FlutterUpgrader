@@ -49,6 +49,7 @@ class AppUpgradeManager {
                   progressBarColor: progressBarColor,
                   borderRadius: borderRadius,
                   downloadUrl: appUpgradeInfo.apkDownloadUrl,
+                  headers: appUpgradeInfo.headers,
                   force: appUpgradeInfo.force,
                   iosAppId: iosAppId,
                   appMarketInfo: appMarketInfo,
@@ -91,12 +92,15 @@ class AppUpgradeInfo {
     required this.contents,
     this.apkDownloadUrl,
     this.force = false,
+    this.headers
   });
 
   final String title;
   final List<String> contents;
   final String? apkDownloadUrl;
   final bool force;
+  ///[headers] 指定URL下载时可传
+  final Map<String, dynamic>? headers;
 }
 
 // 下载进度回调

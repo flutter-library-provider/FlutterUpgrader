@@ -21,6 +21,7 @@ class SimpleUpgradeViewWidget extends StatefulWidget {
     this.progressBarColor,
     this.borderRadius = 10,
     this.downloadUrl,
+    this.headers,
     this.force = false,
     this.iosAppId,
     this.appMarketInfo,
@@ -65,6 +66,9 @@ class SimpleUpgradeViewWidget extends StatefulWidget {
 
   // app安装包下载 url,没有下载跳转到应用宝等渠道更新
   final String? downloadUrl;
+
+  /// 下载安装包时，可传
+  final Map<String, dynamic>? headers;
 
   // 圆角半径
   final double borderRadius;
@@ -152,7 +156,7 @@ class SimpleUpgradeViewWidgetState extends State<SimpleUpgradeViewWidget> {
           FlutterUpgradeChanneler.installAppForAndroid(path);
           Navigator.pop(context);
         }
-      });
+      },options: Options(headers: widget.headers));
     } catch (e) {
       _downloadProgress = 0;
       _downloadStatus = DownloadStatus.error;
