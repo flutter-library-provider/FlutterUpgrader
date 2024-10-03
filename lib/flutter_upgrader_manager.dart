@@ -24,48 +24,53 @@ class AppUpgradeManager {
     VoidCallback? onOk,
   }) {
     future.then((AppUpgradeInfo appUpgradeInfo) {
-      showDialog(
-          context: context,
-          barrierDismissible: false,
-          builder: (context) {
-            okBackgroundColors ??= [
-              Theme.of(context).primaryColor,
-              Theme.of(context).primaryColor
-            ];
+      if (!context.mounted) {
+        return;
+      }
 
-            return DividerTheme(
-              data: dividerTheme ?? DividerTheme.of(context),
-              child: Dialog(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(borderRadius),
-                  ),
-                ),
-                child: SimpleUpgradeViewWidget(
-                  title: appUpgradeInfo.title,
-                  contents: appUpgradeInfo.contents,
-                  titleStyle: titleStyle,
-                  contentStyle: contentStyle,
-                  progressBarColor: progressBarColor,
-                  borderRadius: borderRadius,
-                  downloadUrl: appUpgradeInfo.apkDownloadUrl,
-                  headers: appUpgradeInfo.headers,
-                  force: appUpgradeInfo.force,
-                  iosAppId: iosAppId,
-                  appMarketInfo: appMarketInfo,
-                  downloadProgress: downloadProgress,
-                  downloadStatusChange: downloadStatusChange,
-                  okBackgroundColors: okBackgroundColors,
-                  cancelTextStyle: cancelTextStyle,
-                  okTextStyle: okTextStyle,
-                  cancelText: cancelText,
-                  onCancel: onCancel,
-                  okText: okText,
-                  onOk: onOk,
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (context) {
+          okBackgroundColors ??= [
+            Theme.of(context).primaryColor,
+            Theme.of(context).primaryColor
+          ];
+
+          return DividerTheme(
+            data: dividerTheme ?? DividerTheme.of(context),
+            child: Dialog(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(borderRadius),
                 ),
               ),
-            );
-          });
+              child: SimpleUpgradeViewWidget(
+                title: appUpgradeInfo.title,
+                contents: appUpgradeInfo.contents,
+                titleStyle: titleStyle,
+                contentStyle: contentStyle,
+                progressBarColor: progressBarColor,
+                borderRadius: borderRadius,
+                downloadUrl: appUpgradeInfo.apkDownloadUrl,
+                headers: appUpgradeInfo.headers,
+                force: appUpgradeInfo.force,
+                iosAppId: iosAppId,
+                appMarketInfo: appMarketInfo,
+                downloadProgress: downloadProgress,
+                downloadStatusChange: downloadStatusChange,
+                okBackgroundColors: okBackgroundColors,
+                cancelTextStyle: cancelTextStyle,
+                okTextStyle: okTextStyle,
+                cancelText: cancelText,
+                onCancel: onCancel,
+                okText: okText,
+                onOk: onOk,
+              ),
+            ),
+          );
+        },
+      );
     }).catchError((error) {
       debugPrint('$error');
     });

@@ -1,3 +1,10 @@
+## 1.1.6
+
+- Fix: the bug of 'BuildContext's across async gaps.
+- Chore: upgrade dependencies
+- Chore: update docs (README.md)
+
+
 ## 1.1.5
 
 - chore: support headers options
