@@ -1,9 +1,13 @@
+## 1.1.7
+
+- Chore: set namespace "com.flutter.plugin.flutter_upgrader" on the Android platform.
+- Chore: upgrade dependencies
+
 ## 1.1.6
 
 - Fix: the bug of 'BuildContext's across async gaps.
 - Chore: upgrade dependencies
 - Chore: update docs (README.md)
-
 
 ## 1.1.5
 
