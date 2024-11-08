@@ -41,12 +41,13 @@ class FlutterUpgradeChanneler {
   }
 
   // 跳转到 ios app store
-  static jumpAppStore(String? id) async {
+  static jumpAppStore(String? id, bool? beta) async {
     if (id == null) {
       return;
     }
 
-    return await _channel.invokeMethod('jumpAppStore', {'id': id});
+    final params = {'id': id, 'beta': beta.toString()};
+    return await _channel.invokeMethod('jumpAppStore', params);
   }
 
   // 跳转到应用商店

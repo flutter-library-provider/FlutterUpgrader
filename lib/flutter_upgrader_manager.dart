@@ -22,6 +22,7 @@ class AppUpgradeManager {
     DownloadStatusChangeCallback? downloadStatusChange,
     VoidCallback? onCancel,
     VoidCallback? onOk,
+    bool? beta,
   }) {
     future.then((AppUpgradeInfo appUpgradeInfo) {
       if (!context.mounted) {
@@ -66,6 +67,7 @@ class AppUpgradeManager {
                 onCancel: onCancel,
                 okText: okText,
                 onOk: onOk,
+                beta: beta,
               ),
             ),
           );

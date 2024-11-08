@@ -22,7 +22,7 @@ public class SwiftFlutterUpgraderPlugin: NSObject, FlutterPlugin {
       result(map)
     } else if (call.method == "jumpAppStore") {
       let args = call.arguments as! Dictionary<String, String>
-      let urlString = "itms-apps://itunes.apple.com/app/" + (args["id"] ?? "")
+      let urlString = args["beta"] == "true" ? "itms-beta://itunes.apple.com/app/" + (args["id"] ?? "") : "itms-apps://itunes.apple.com/app/" + (args["id"] ?? "")
 
       if let url = URL(string: urlString) {
         if #available(iOS 10, *) {

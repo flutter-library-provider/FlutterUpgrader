@@ -22,6 +22,7 @@ class SimpleUpgradeViewWidget extends StatefulWidget {
     this.borderRadius = 10,
     this.downloadUrl,
     this.headers,
+    this.beta = false,
     this.force = false,
     this.iosAppId,
     this.appMarketInfo,
@@ -75,6 +76,8 @@ class SimpleUpgradeViewWidget extends StatefulWidget {
 
   // 是否强制升级,设置true没有取消按钮
   final bool force;
+
+  final bool? beta;
 
   // ios app id,用于跳转app store
   final String? iosAppId;
@@ -281,7 +284,7 @@ class SimpleUpgradeViewWidgetState extends State<SimpleUpgradeViewWidget> {
           widget.onOk?.call();
 
           if (Platform.isIOS) {
-            FlutterUpgradeChanneler.jumpAppStore(widget.iosAppId);
+            FlutterUpgradeChanneler.jumpAppStore(widget.iosAppId, widget.beta);
             Navigator.of(context).pop();
             return;
           }

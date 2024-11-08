@@ -1,3 +1,7 @@
+## 1.1.8
+
+- Support: upgrade IOS app to TestFlight Download
+
 ## 1.1.7
 
 - Chore: set namespace "com.flutter.plugin.flutter_upgrader" on the Android platform.
