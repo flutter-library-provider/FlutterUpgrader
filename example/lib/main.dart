@@ -53,6 +53,7 @@ class UpgradeButton extends StatelessWidget {
         final Future<AppUpgradeInfo> appUpgradeInfo = Future.value(
           AppUpgradeInfo(
             title: '更新提示',
+            version: '1.0.0',
             contents: ['有新版本哟,请更新～'],
             force: true,
           ),

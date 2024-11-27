@@ -1,3 +1,9 @@
+## 1.1.9
+
+- Chore: extended UI style customization
+  - support custom title (version or customize)
+  - support custom content padding
+
 ## 1.1.8
 
 - Support: upgrade IOS app to TestFlight Download

@@ -7,7 +7,9 @@ class AppUpgradeManager {
     BuildContext context,
     Future<AppUpgradeInfo> future, {
     TextStyle? titleStyle,
+    TextStyle? versionStyle,
     TextStyle? contentStyle,
+    EdgeInsets? contentPadding,
     String? cancelText,
     TextStyle? cancelTextStyle,
     String? okText,
@@ -48,9 +50,12 @@ class AppUpgradeManager {
               ),
               child: SimpleUpgradeViewWidget(
                 title: appUpgradeInfo.title,
+                version: appUpgradeInfo.version,
                 contents: appUpgradeInfo.contents,
                 titleStyle: titleStyle,
+                versionStyle: versionStyle,
                 contentStyle: contentStyle,
+                contentPadding: contentPadding,
                 progressBarColor: progressBarColor,
                 borderRadius: borderRadius,
                 downloadUrl: appUpgradeInfo.apkDownloadUrl,
@@ -97,12 +102,14 @@ class AppUpgradeInfo {
   AppUpgradeInfo({
     required this.title,
     required this.contents,
-    this.headers,
     this.apkDownloadUrl,
     this.force = false,
+    this.headers,
+    this.version,
   });
 
-  final String title;
+  final dynamic title;
+  final String? version;
   final List<String> contents;
   final Map<String, dynamic>? headers;
   final String? apkDownloadUrl;

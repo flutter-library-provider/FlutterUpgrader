@@ -10,8 +10,11 @@ class SimpleUpgradeViewWidget extends StatefulWidget {
     required this.title,
     required this.contents,
     super.key,
+    this.version,
     this.titleStyle,
+    this.versionStyle,
     this.contentStyle,
+    this.contentPadding,
     this.cancelText,
     this.cancelTextStyle,
     this.okText,
@@ -33,7 +36,10 @@ class SimpleUpgradeViewWidget extends StatefulWidget {
   });
 
   // 升级标题
-  final String title;
+  final dynamic title;
+
+  // 升级标题
+  final String? version;
 
   // 升级提示内容
   final List<String> contents;
@@ -41,8 +47,14 @@ class SimpleUpgradeViewWidget extends StatefulWidget {
   // 标题样式
   final TextStyle? titleStyle;
 
+  // 版本样式
+  final TextStyle? versionStyle;
+
   // 提示内容样式
   final TextStyle? contentStyle;
+
+  // 提示内容内间距
+  final EdgeInsets? contentPadding;
 
   // 下载进度条
   final Widget? progressBar;
@@ -173,6 +185,46 @@ class SimpleUpgradeViewWidgetState extends State<SimpleUpgradeViewWidget> {
 
   // 构建标题
   _buildTitle(BuildContext context) {
+    if (widget.title is! Widget && widget.title is! String) {
+      return SizedBox.shrink();
+    }
+
+    if (widget.title is Widget) {
+      return Padding(
+        padding: const EdgeInsets.only(
+          top: 20,
+          bottom: 30,
+        ),
+        child: widget.title(),
+      );
+    }
+
+    if (widget.version != null) {
+      return Padding(
+        padding: const EdgeInsets.only(
+          top: 20,
+          bottom: 30,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              widget.title,
+              style: widget.titleStyle ?? const TextStyle(fontSize: 22),
+            ),
+            SizedBox(
+              width: 5,
+            ),
+            Text(
+              '(${widget.version!.replaceAll(r'\(|\)', '')})',
+              style: widget.versionStyle ?? const TextStyle(fontSize: 20),
+            ),
+          ],
+        ),
+      );
+    }
+
     return Padding(
       padding: const EdgeInsets.only(
         top: 20,
@@ -188,8 +240,13 @@ class SimpleUpgradeViewWidgetState extends State<SimpleUpgradeViewWidget> {
   // 构建版本更新信息
   _buildAppInfo(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(left: 15, right: 15, bottom: 30),
       height: 200,
+      padding: widget.contentPadding ??
+          const EdgeInsets.only(
+            left: 15,
+            right: 15,
+            bottom: 30,
+          ),
       child: ListView(
         children: widget.contents.map((text) {
           return Text(
