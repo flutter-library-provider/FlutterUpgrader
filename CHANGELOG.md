@@ -1,3 +1,7 @@
+## 1.1.20
+- chore: upgrade dependencies
+- fix: fix some bugs
+
 ## 1.1.9
 
 - Chore: extended UI style customization

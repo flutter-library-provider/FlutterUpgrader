@@ -6,7 +6,7 @@
 
    ```
     dependencies:
-      flutter_upgrader: ^1.1.9
+      flutter_upgrader: ^1.1.20
    ```
 
 2. 在命令行运行如下
