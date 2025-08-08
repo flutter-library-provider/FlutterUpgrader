@@ -342,13 +342,13 @@ class SimpleUpgradeViewWidgetState extends State<SimpleUpgradeViewWidget> {
 
           if (Platform.isIOS) {
             FlutterUpgradeChanneler.jumpAppStore(widget.iosAppId, widget.beta);
-            Navigator.of(context).pop();
+            if (!widget.force) Navigator.of(context).pop();
             return;
           }
 
           if (widget.downloadUrl == null || widget.downloadUrl!.isEmpty) {
             FlutterUpgradeChanneler.jumpMarket(widget.appMarketInfo);
-            Navigator.of(context).pop();
+            if (!widget.force) Navigator.of(context).pop();
             return;
           }
 
